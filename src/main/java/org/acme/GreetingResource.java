@@ -11,9 +11,16 @@ import javax.ws.rs.core.MediaType;
 public class GreetingResource {
     @ConfigProperty(name = "target", defaultValue = "World")
     String message;
+
+    @ConfigProperty(defaultValue = "Students", name="application.greeting.recipient")
+    String recipient;
+
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String hello() {
         return "Hello " + message + "!";
     }
+
+
+
 }
